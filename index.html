@@ -1,8 +1,69 @@
 <html>
 <head>
-<title>hellooo</title>
+<title>Ball Jump</title>
 <script src = "https://ivory.netlify.com/dist/ivory.js"></script>
 </head>
+<style>
+    body {
+
+        background: black;
+        font-size: 300%;
+
+    }
+
+    h1 {
+
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+        border-style: dotted;
+        border-width: 3px;
+        border-color: grey;
+        max-width: 694px;
+
+    }
+
+    button {
+
+        color: grey;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 100%;
+
+    }
+
+    h4 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+    }
+
+    h6 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    h5 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    h2 {
+
+        color: red;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    a {
+
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+</style>
 <body>
 <canvas id="canvas"></canvas>
 
@@ -21,11 +82,11 @@
         var canvas = document.getElementById('canvas'),
             ctx    = canvas.getContext('2d');
 
-        canvas.width = 304;
+        canvas.width = 500;
         canvas.height = 400;
         
 
-        var map = {
+        var map2 = {
         
             tile_size: 16,
             keys: [
@@ -102,12 +163,12 @@
             scripts: {
                 change_colour: 'this.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
                 /* you could load a new map variable here */
-                next_level: 'this.load_map(map2);',
+                next_level: 'this.load_map(map);',
                 death: 'this.load_map(map);',
                 unlock: 'this.current_map.keys[10].solid = 0;this.current_map.keys[10].colour = "#888";'
             }
         };
-        var map2 = {
+        var map = {
         
             tile_size: 16,
             keys: [
@@ -174,7 +235,7 @@
             scripts: {
                 change_colour: 'this.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
                 /* you could load a new map variable here */
-                next_level: 'this.load_map(map);',
+                next_level: 'this.load_map(map2);',
                 death: 'this.load_map(map2);',
                 unlock: 'this.current_map.keys[10].solid = 0;this.current_map.keys[10].colour = "#888";'
             }
