@@ -243,7 +243,7 @@
                 lock: 'this.current_map.keys[10].solid = 1;this.current_map.keys[10].colour = "#888";'
             }
         };
-        var map = {
+        var map3 = {
 
             tile_size: 16,
             keys: [
@@ -324,7 +324,7 @@
                 change_colour: 'this.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
                 /* you could load a new map variable here */
                 next_level: 'this.load_map(map);',
-                death: 'this.load_map(map);',
+                death: 'this.load_map(map3);',
                 unlock: 'this.current_map.keys[10].solid = 0;this.current_map.keys[10].colour = "rgba(121, 220, 242, 0.3)";'
             }
         };
