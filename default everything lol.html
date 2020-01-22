@@ -1,4 +1,93 @@
-            
+<html>
+
+<head>
+    <title>Ball, Jump!</title>
+    <script src="https://ivory.netlify.com/dist/ivory.js"></script>
+</head>
+<style>
+    body {
+
+        background: black;
+        font-size: 300%;
+
+    }
+
+    h1 {
+
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+        border-style: dotted;
+        border-width: 3px;
+        border-color: grey;
+        max-width: 694px;
+
+    }
+
+    button {
+
+        color: grey;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 100%;
+
+    }
+
+    h4 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+    }
+
+    h6 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    h5 {
+
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    h2 {
+
+        color: red;
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+
+    a {
+
+        font-family: 'Luckiest Guy', cursive;
+
+    }
+</style>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script type="text/javascript">
+
+        window.requestAnimFrame =
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+                return window.setTimeout(callback, 1000 / 60);
+            };
+
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d');
+
+        canvas.width = 500;
+        canvas.height = 400;
+
+
         var map = {
 
             tile_size: 16,
@@ -79,3 +168,35 @@
                 unlock: 'this.current_map.keys[10].solid = 0;this.current_map.keys[10].colour = "#888";'
             }
         };
+
+        /* Setup of the engine */
+
+        var game = new Clarity();
+        game.set_viewport(canvas.width, canvas.height);
+        game.load_map(map);
+
+        /* Limit the viewport to the confines of the map */
+
+        game.limit_viewport = true;
+
+        var Loop = function () {
+
+            ctx.fillStyle = '#333';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            game.update();
+            game.draw(ctx);
+
+            window.requestAnimFrame(Loop);
+        };
+
+        /* Start */
+
+        Loop();
+    </script>
+    <h6>Reload for restart</h6>
+</body>
+
+
+
+</html>
