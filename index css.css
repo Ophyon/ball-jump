@@ -1,10 +1,4 @@
-<html>
 
-<head>
-    <title>Ball Jump</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
-</head>
-<style>
     body {
 
         background: black;
@@ -32,7 +26,7 @@
 
         color: grey;
         font-family: 'Luckiest Guy', cursive;
-        font-size: 100%;
+        font-size: 75%;
 
     }
     h4 {
@@ -81,27 +75,4 @@
 
         font-size: 34.56%;
 
-    }</style>
-<!--- ✅ -->
-<body>    
-    <div align="center"><img src="/images/logo w title.png" alt="" align="center" height="225px" width="450px"/></div>
-    <table border="1" align="center">
-    <tr>
-        <td>Level 1</td>
-        <td>Level 2</td>
-        <td>Level 3</td>
-        <td>Level 4</td>
-        <td>Level 5</td>
-    </tr>
-    <tr>
-        <td align="center">✅</td>
-        <td align="center">✅</td>
-        <td align="center">✅</td>
-        <td align="center">✅</td>
-        <td align="center">✅</td>
-    </tr>
-</table>
-    <h6 align="center">Congradulations! You beat the game!<br/>More levels are on the way so look out for them!<br>You can restart the game by clicking on the button below!<br><a href="/game.html"><button>Restart</button></a></h6>
-</body>
-
-</html>
+    }
